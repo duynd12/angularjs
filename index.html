@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+        integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+            integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">    
+</head>
+<body ng-controller="GreetingController">
+<div class="header">
+    <div class="navbar">
+        <div class="navbar_left">
+            <a class="a" href="">GIỚI THIỆU</a>
+        </div>
+        <div class="navbar_right">
+            <div class="nav_item">
+                <a class="a" href="">TẢI ỨNG DỤNG</a>
+            </div>
+            <div class="nav_item">
+                <a class="a" href="">LỢI ÍCH</a>
+            </div>
+            <div class="nav_item active">
+                <a class="a" href="">ĐỊA ĐIỂM HOÀN TIỀN</a>
+            </div>
+        </div>
+        <div class="icon iconF" ng-click="clickIcon()"div>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+
+    </div>
+
+</div>
+<div class="list" ng-class="style">
+    <div class=" list_item1">
+        <a class="a" href="">GIỚI THIỆU</a>
+        <div class="icon icon1 click" ng-click="clickIcon1()" #iconDiv>
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+
+    <div class="list_item ">
+        <a class="a" href="">ĐỊA ĐIỂM HOÀN TIỀN</a>
+    </div>
+
+    <div class="list_item">
+        <a class="a" href="">LỢI ÍCH</a>
+    </div>
+    <div class="list_item">
+        <a class="a" href="">TẢI ỨNG DỤNG</a>
+    </div>
+</div>
+<div class="main">
+    <div class="overlay" ng-if="isDisabled" (click)="overlayClick()">
+
+    </div>
+
+    <div class="container">
+        <div class="card col3" ng-repeat="res in restaurents" #card ng-click="cardClick(res)">
+            <div class="card_header">
+                <img class="card_img" src="./image/{{res.place.hinh}}" alt="">
+            </div>
+            <div class="card_main">
+                <h3 class="place_names">{{res.place.ten}}</h3>
+                <span class="num_places">{{res.numPlace}} địa điểm</span>
+                <span class="refun">Hoàn tiền {{res.place.hoanTien}}</span>
+            </div>
+        </div>
+
+        <div class="test" ng-if="isDisabled">
+            <div class="popup_header">
+                <h1 class="txt_header" style="padding-left:15px">Danh sách địa điểm {{name}}</h1>
+                <span ng-click="changeIsDisabled()">&times;</span>
+            </div>
+            <div class="popup_content" style="padding:15px">
+                <div ng-if="southeast.length > 0">
+                    <h1 class="txt_body" style="margin:0">Miền Nam</h1>
+                    <ul ng-repeat="item in southeast">
+                        <li>{{item}}</li>
+                    </ul>
+                </div>
+                <div ng-if="northeast.length > 0">
+                    <h1 class="txt_body">Miền Bắc</h1>
+                    <ul ng-repeat="item in northeast">
+                        <li>{{item}}</li>
+                    </ul>
+                </div>
+                <div ng-if="mientrung.length > 0">
+                    <h1 class="txt_body">Miền Trung</h1>
+                    <ul ng-repeat="item in mientrung">
+                        <li>{{item}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="footer">
+    <span>© 2020 - Công ty cổ phần Gigatum Việt Nam</span>
+</div>
+
+</body>
+<script src="./script.js"></script>
+</html>
