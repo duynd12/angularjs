@@ -1,0 +1,363 @@
+@font-face {
+    font-family: Roboto;
+    src: url(./assets/Theme/Roboto/Roboto-Medium.ttf);
+}
+
+
+body {
+    margin: 0;
+    font-family: Roboto;
+}
+
+
+.col3 {
+    width: calc(3/12*100%);
+}
+
+.col12 {
+    width: 100%;
+}
+/* header */
+.header {
+    height: 60px;
+    background-color: red;
+    color: white;
+    padding-left: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.navbar_left {
+    margin-right: auto;
+
+}
+
+.a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.navbar_right {
+    display: flex;
+    height: 100%;
+
+}
+
+
+.nav_item {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    height: 100%;
+}
+
+.active {
+    background-color: rgb(144, 27, 4);
+}
+
+.icon {
+    display: none;
+    cursor: pointer;
+}
+
+.list {
+    display: none;
+}
+
+@media screen and (max-width:986px) {
+    .header {
+        height: 50px;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .header {
+        height: 50px;
+        position: fixed;
+        width: 100%;
+    }
+
+
+    .navbar_right {
+        display: none;
+    }
+
+    .icon {
+        display: block;
+        font-size: 25px;
+        padding: 0 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .iconF {
+        margin-right: 20px;
+    }
+
+    .list {
+        z-index: 999;
+        display: none;
+        background-color: #2801019e;
+        opacity: 80%;
+        height: 220px;
+        width: 100%;
+        display: none; 
+        position: fixed;
+        top: 0px;
+        left: 0;
+        right: 0;
+    }
+
+    .list_item1 {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        color: #fff;
+        height: 50px;
+    }
+
+    .icon1 {
+        margin-left: auto;
+    }
+
+    .list_item {
+        padding: 15px 20px;
+        color: #fff;
+    }
+
+    .click {
+        background-color: rgb(60 8 8);
+    }
+
+    .d-block {
+        display: block;
+    }
+
+    .a {
+        font-size: 18px;
+    }
+
+}
+
+
+/* content */
+.main {
+    height: 100%;
+    position: relative;
+}
+
+.container {
+    padding: 30px 100px 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 25%;
+    padding: 0 35px;
+    box-sizing: border-box;
+    margin-bottom: 41px;
+}
+
+.card_header {
+    height: 120px;
+    border: 2px solid rgb(250, 104, 104);
+    border-radius: 4px;
+    margin: 0 40px;
+    padding: 5px;
+}
+
+.card_img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+}
+
+.card_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.place_names {
+    margin-bottom: 5px;
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.num_places {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.refun {
+    color: red;
+    font-size: 20px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    cursor: pointer;
+}
+
+.test {
+    width: 60vw;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    z-index: 10;
+    box-shadow: 1px 3px 10px rgb(0 0 0 / 0.8);
+}
+
+.popup_header {
+    width: 100%;
+    background-color: #ff7f50;
+    height: 70px;
+    font-size: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popup_header span {
+    cursor: pointer;
+    margin-right: 15px;
+    font-size: 35px;
+}
+
+.popup_content {
+    background-color: #f7f7f7;
+}
+
+.overlay {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #c1acaca1
+}
+
+.footer {
+    background-color: #c5bcb9;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    position: fixed;
+    bottom: 0;
+}
+
+
+
+@media screen and (max-width:986px) {
+
+    .container {
+        padding: 17px 25px 0;
+    }
+
+
+
+    .card {
+        width: calc(4/12*100%);
+        padding: 0 20px;
+        height: 25%;
+        margin-bottom: 25px;
+    }
+
+    .card_header {
+        margin: 0;
+        height: 90px;
+        padding: 5px;
+    }
+
+    .place_names {
+        font-size: 24px;
+    }
+
+    .num_places {
+        font-size: 16px;
+    }
+
+    .refun {
+        font-size: 16px;
+    }
+
+    .card_img {
+        object-fit: fill;
+    }
+
+    .txt_header {
+        font-size: 24px;
+    }
+
+    .txt_body {
+        font-size: 20px;
+    }
+
+    .test {
+        top: 15%;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container {
+        padding: 20px 10px;
+        margin-top: 50px;
+    }
+
+
+    .popup_header {
+        padding: 5px 0;
+    }
+
+    .card {
+        width: 100%;
+        height: unset;
+    }
+
+    .card_header {
+        margin: 0;
+        height: unset;
+        padding: 5px;
+    }
+
+    .card_img {
+        object-fit: fill;
+    }
+
+    .txt_header {
+        font-size: 20px;
+        margin-right: 10px;
+    }
+
+    .txt_body {
+        font-size: 18px;
+    }
+
+    .test {
+        position: fixed;
+        top: 15%;
+    }
+
+    .footer {
+        padding: 5px;
+    }
+
+}
